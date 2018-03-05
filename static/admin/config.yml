@@ -27,8 +27,8 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: "Title", name: "title", widget: "string"}
-          - {label: "Site Title", name: "siteTitle", widget: "string"}
-          - {label: "Site Logo", name: "siteLogo", widget: "image"}
+          - {label: "Site_Title", name: siteTitle, widget: "string"}
+          - {label: "Site_Logo", name: siteLogo, widget: "image"}
           - {label: "Body", name: "body", widget: "markdown"}
       - file: "src/pages/products/index.md"
         label: "Products Page"
