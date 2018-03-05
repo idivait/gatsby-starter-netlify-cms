@@ -9,11 +9,12 @@ import './all.sass'
 
 const TemplateWrapper = (data) => {
   console.log(data);
-
+  const { markdownRemark : info } = data.data;
+  const title = `${info.frontmatter.siteTitle}`;
   return (
   <div>
-    <Helmet title="Home | Gatsby + Netlify CMS" />
-    <Navbar />
+    <Helmet title={title} />
+    <Navbar siteLogo={info.frontmatter.siteLogo} siteTitle={info.frontmatter.siteTitle}/>
     <div>{data.children()}</div>
   </div>
 )
@@ -23,16 +24,16 @@ TemplateWrapper.propTypes = {
   children: PropTypes.func,
 }
 
-// export const pageQuery = graphql`
-//   query RootQuery {
-//     markdownRemark(id: { eq: "/about" }) {
-//       html
-//       frontmatter {
-//         title
-//         sitetitle
-//       }
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query RootQuery {
+    markdownRemark(frontmatter: { path: { eq: "/about" } }) {
+      html
+      frontmatter {
+        siteTitle
+        siteLogo
+      }
+    }
+  }
+`
 
 export default TemplateWrapper

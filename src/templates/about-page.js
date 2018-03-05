@@ -3,7 +3,6 @@ import Content, { HTMLContent } from '../components/Content'
 
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
-
   return (
     <section className="section section--gradient">
       <div className="container">
@@ -23,6 +22,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
 }
 
 export default ({ data }) => {
+  console.log(data);
   const { markdownRemark: post } = data
 
   return (
@@ -40,6 +40,7 @@ export const aboutPageQuery = graphql`
       html
       frontmatter {
         title
+        siteTitle
       }
     }
   }
