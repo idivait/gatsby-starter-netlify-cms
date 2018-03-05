@@ -23,16 +23,16 @@ TemplateWrapper.propTypes = {
   children: PropTypes.func,
 }
 
-export const pageQuery = graphql`
-  query RootQuery {
-    markdownRemark(id: { eq: "/about" }) {
-      html
-      frontmatter {
-        title
-        sitetitle
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query RootQuery {
+//     markdownRemark(id: { eq: "/about" }) {
+//       html
+//       frontmatter {
+//         title
+//         sitetitle
+//       }
+//     }
+//   }
+// `
 
 export default TemplateWrapper
