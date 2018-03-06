@@ -26,7 +26,7 @@ TemplateWrapper.propTypes = {
 
 export const pageQuery = graphql`
   query RootQuery {
-    markdownRemark(frontmatter: { path: { eq: "/about" } }) {
+    markdownRemark(fields: {slug: {eq: "/about/"}}) {
       html
       frontmatter {
         siteTitle
