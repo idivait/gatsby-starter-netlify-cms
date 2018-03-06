@@ -1,6 +1,5 @@
 ---
-templateKey: 'about-page'
-path: /about
+templateKey: about-page
 title: About our values
 siteTitle: iDiva.IT
 siteLogo: /img/logo.svg
